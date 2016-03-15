@@ -9,6 +9,8 @@
 	Username:<input type="text" name="username"></input>
 	<br>
 	Password:<input type="password" name="password"></input>
+	<br>
+	<input type="submit" value="Submit"></input>
 </form>
 
 </body>
