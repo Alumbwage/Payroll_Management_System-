@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1> <?php echo "Welcome To ACE Tech." ?> </h1>
-    <?php include("login.php"); ?> 
+    <?php include_once("login.php"); ?> 
 </body>
 </html>

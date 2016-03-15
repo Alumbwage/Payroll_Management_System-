@@ -11,8 +11,12 @@
            $pass = $_POST["password"];
 
            if($user == "gaurav" && $pass == "gaurav@ace" || $user == "sagar" && $pass == "sagar@ace" || $user == "harsh" && $pass == "harsh@ace" ){?>
-           	 <h1> <?php echo " Welcome $user"; ?>  </h1>;
-           <?php }else{ echo "Invalid User!!!";} ?>
+           	 <h1> <?php echo " Welcome " . ucfirst($user); ?>  </h1>
+           <?php }
+           else{ echo "<script> alert(\"Invalid Username OR Password!!!\");window.location.href='index.php'</script>"; 
+       			}
+
+        ?>
       
 </body>
 </html>
