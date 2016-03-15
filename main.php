@@ -17,6 +17,10 @@
        			}
 
         ?>
+       
+        <?php require("selectFromEmployee.php"); ?>
+
+
       
 </body>
 </html>
