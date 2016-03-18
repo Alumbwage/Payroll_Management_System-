@@ -1,7 +1,7 @@
 
 <?php 
-echo $user;
-$sql_statement  = " SELECT * FROM salary";
+
+$sql_statement  = "SELECT * FROM employee AS e INNER JOIN salary AS s ON e.Emp_id = s.Emp_id ";
 
 
 $result = mysql_query($sql_statement);
@@ -17,10 +17,10 @@ if(!$result){
 	$outputDisplay .= "<br>MySQL Affected Rows: ".mysql_affected_rows()."</font><br>";
 }else{
 	
-	$outputDisplay .= "<h3>Attendance Details : </h3>";
+	$outputDisplay .= "<h3>Salary Details : </h3>";
     
 	$outputDisplay .='<center><table border=1 style="color:black;">';
-	$outputDisplay .='<tr><th>Emp_id</th><th>Basic_sal</th><th>Allowance</th><th>DRA</th><th>Advance</th></tr>';
+	$outputDisplay .='<tr><th>Emp_id</th><th>Emp_name</th><th>Dept</th><th>Desgn</th><th>Branch_name</th><th>Basic_sal</th><th>Allowance</th><th>DRA</th><th>Advance</th></tr>';
 
 	$numresults = mysql_num_rows($result);
 
@@ -36,6 +36,10 @@ if(!$result){
 		$row = mysql_fetch_array($result);
        
 		$emp_id = $row['Emp_id'];
+		$emp_name = $row['Emp_name'];
+		$dept = $row['Dept_name'];
+		$desgn = $row['Desgn'];
+		$branch = $row['Branch_name'];
 		$basic = $row['Basic_sal'];
 		$allowance= $row['Allowance'];
 		$dra = $row['DRA'];
@@ -44,6 +48,10 @@ if(!$result){
 		
 
 		$outputDisplay .="<td>".$emp_id."</td>";
+		$outputDisplay .="<td>".$emp_name."</td>";
+		$outputDisplay .="<td>".$dept."</td>";
+		$outputDisplay .="<td>".$desgn."</td>";
+		$outputDisplay .="<td>".$branch."</td>";
 		$outputDisplay .="<td>".$basic."</td>";
 		$outputDisplay .="<td>".$allowance."</td>";
 		$outputDisplay .="<td>".$dra."</td>";

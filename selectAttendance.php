@@ -1,7 +1,7 @@
 
 <?php 
-echo $user;
-$sql_statement  = " SELECT * FROM attendance";
+
+$sql_statement  = "SELECT * FROM employee AS e INNER JOIN attendance AS a ON a.Emp_id = e.Emp_id; ";
 
 
 $result = mysql_query($sql_statement);
@@ -20,7 +20,7 @@ if(!$result){
 	$outputDisplay .= "<h3>Attendance Details : </h3>";
     
 	$outputDisplay .='<center><table border=1 style="color:black;">';
-	$outputDisplay .='<tr><th>Emp_id</th><th>Month</th><th>twd</th><th>wd</th><th>Leaves</th></tr>';
+	$outputDisplay .='<tr><th>Emp_id</th><th>Emp_name</th><th>Dept</th><th>Desgn</th><th>Branch_name</th><th>Month</th><th>twd</th><th>wd</th><th>Leaves</th></tr>';
 
 	$numresults = mysql_num_rows($result);
 
@@ -36,6 +36,10 @@ if(!$result){
 		$row = mysql_fetch_array($result);
        
 		$emp_id = $row['Emp_id'];
+		$emp_name = $row['Emp_name'];
+		$dept = $row['Dept_name'];
+		$desgn = $row['Desgn'];
+		$branch = $row['Branch_name'];
 		$month = $row['Month_name'];
 		$twd = $row['Total_Working_Days'];
 		$wd = $row['Worked_Days'];
@@ -44,6 +48,10 @@ if(!$result){
 		
 
 		$outputDisplay .="<td>".$emp_id."</td>";
+		$outputDisplay .="<td>".$emp_name."</td>";
+		$outputDisplay .="<td>".$dept."</td>";
+		$outputDisplay .="<td>".$desgn."</td>";
+		$outputDisplay .="<td>".$branch."</td>";
 		$outputDisplay .="<td>".$month."</td>";
 		$outputDisplay .="<td>".$twd."</td>";
 		$outputDisplay .="<td>".$wd."</td>";
