@@ -20,7 +20,7 @@ if(!$result){
 	$outputDisplay .= "<h3>Employee Details : </h3>";
     
 	$outputDisplay .='<center><table border=1 style="color:black;">';
-	$outputDisplay .='<tr><th>Emp_id</th><th>Emp_name</th><th>Dept</th><th>Desgn</th></tr>';
+	$outputDisplay .='<tr><th>Emp_id</th><th>Emp_name</th><th>Dept</th><th>Desgn</th><th>Branch_name</th><th>Contact</th><th>City_addr</th></tr>';
 
 	$numresults = mysql_num_rows($result);
 
@@ -37,13 +37,19 @@ if(!$result){
 
 		$emp_id = $row['Emp_id'];
 		$emp_name = $row['Emp_name'];
-		$dept = $row['Dept'];
+		$dept = $row['Dept_name'];
 		$desgn = $row['Desgn'];
+		$branch = $row['Branch_name'];
+		$contact = $row['Contact'];
+		$city =$row['City_addr'];
 
 		$outputDisplay .="<td>".$emp_id."</td>";
 		$outputDisplay .="<td>".$emp_name."</td>";
 		$outputDisplay .="<td>".$dept."</td>";
 		$outputDisplay .="<td>".$desgn."</td>";
+		$outputDisplay .="<td>".$branch."</td>";
+		$outputDisplay .="<td>".$contact."</td>";
+		$outputDisplay .="<td>".$city."</td>";
 
 		$outputDisplay .= "</tr>";
 		$myrowcount++;
