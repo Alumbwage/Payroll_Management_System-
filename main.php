@@ -44,7 +44,9 @@
 						}
 					}
        	?>
-       
+  <form action="index.php">
+    <input type="submit" value="Log Out"></input>
+  </form>     
  
       
         

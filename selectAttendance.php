@@ -1,12 +1,8 @@
 
 <?php 
+echo $user;
+$sql_statement  = " SELECT * FROM attendance";
 
-
-if ($user == "admin"){
-$sql_statement  = " SELECT * FROM employee ";
-}else{
-$sql_statement  = " SELECT * FROM employee WHERE Branch_name IN (SELECT Branch_name FROM admin WHERE username = '".$user."') ";
-}
 
 $result = mysql_query($sql_statement);
 
@@ -21,10 +17,10 @@ if(!$result){
 	$outputDisplay .= "<br>MySQL Affected Rows: ".mysql_affected_rows()."</font><br>";
 }else{
 	
-	$outputDisplay .= "<h3>Employee Details : </h3>";
+	$outputDisplay .= "<h3>Attendance Details : </h3>";
     
 	$outputDisplay .='<center><table border=1 style="color:black;">';
-	$outputDisplay .='<tr><th>Emp_id</th><th>Emp_name</th><th>Dept</th><th>Desgn</th><th>Branch_name</th><th>Contact</th><th>City_addr</th></tr>';
+	$outputDisplay .='<tr><th>Emp_id</th><th>Month</th><th>twd</th><th>wd</th><th>Leaves</th></tr>';
 
 	$numresults = mysql_num_rows($result);
 
@@ -38,23 +34,21 @@ if(!$result){
 		}
 
 		$row = mysql_fetch_array($result);
-        
+       
 		$emp_id = $row['Emp_id'];
-		$emp_name = $row['Emp_name'];
-		$dept = $row['Dept_name'];
-		$desgn = $row['Desgn'];
-		$branch = $row['Branch_name'];
-		$contact = $row['Contact'];
-		$city =$row['City_addr'];
+		$month = $row['Month_name'];
+		$twd = $row['Total_Working_Days'];
+		$wd = $row['Worked_Days'];
+		$leaves= $row['Leaves'];
+		
+		
 
 		$outputDisplay .="<td>".$emp_id."</td>";
-		$outputDisplay .="<td>".$emp_name."</td>";
-		$outputDisplay .="<td>".$dept."</td>";
-		$outputDisplay .="<td>".$desgn."</td>";
-		$outputDisplay .="<td>".$branch."</td>";
-		$outputDisplay .="<td>".$contact."</td>";
-		$outputDisplay .="<td>".$city."</td>";
-
+		$outputDisplay .="<td>".$month."</td>";
+		$outputDisplay .="<td>".$twd."</td>";
+		$outputDisplay .="<td>".$wd."</td>";
+		$outputDisplay .="<td>".$leaves."</td>";
+		
 		$outputDisplay .= "</tr>";
 		$myrowcount++;
 	}	

@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action="main.php" method="post">
+<form action="mainAuth.php" method="post">
 	Username:<input type="text" name="username"></input>
 	<br>
 	Password:<input type="password" name="password"></input>
