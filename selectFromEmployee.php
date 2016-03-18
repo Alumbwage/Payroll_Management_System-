@@ -1,8 +1,12 @@
 
 <?php 
 require("connection.php");
-$sql_statement  = " SELECT * FROM employee WHERE Branch_name IN (SELECT Branch_name FROM admin WHERE username = '".$user."') ";
 
+if ($user == "admin"){
+$sql_statement  = " SELECT * FROM employee ";
+}else{
+$sql_statement  = " SELECT * FROM employee WHERE Branch_name IN (SELECT Branch_name FROM admin WHERE username = '".$user."') ";
+}
 
 $result = mysql_query($sql_statement);
 

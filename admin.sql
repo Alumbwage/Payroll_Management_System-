@@ -40,7 +40,7 @@ INSERT INTO `admin` (`username`, `password`, `Branch_name`) VALUES
 ('gaurav', 'gaurav@ace', 'Borivali'),
 ('sagar', 'sagar@ace', 'Jogeshwari'),
 ('harsh', 'harsh@ace', 'Goregaon'),
-('admin', 'admin@ace', 'all');
+('admin', 'admin@ace', 'All');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
