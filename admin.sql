@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`username`, `password`, `branch`) VALUES
+INSERT INTO `admin` (`username`, `password`, `Branch_name`) VALUES
 ('gaurav', 'gaurav@ace', 'Borivali'),
 ('sagar', 'sagar@ace', 'Jogeshwari'),
 ('harsh', 'harsh@ace', 'Goregaon'),

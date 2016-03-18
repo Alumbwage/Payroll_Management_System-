@@ -20,7 +20,7 @@
      		} ?>
           
        <?php require("connection.php") ?>   
-       	<?php $sql_statement  = " SELECT username FROM admin WHERE username = '".$user."' AND password = '".$pass."' ";
+       	<?php $sql_statement  = " SELECT username ,Branch_name FROM admin WHERE username = '".$user."' AND password = '".$pass."' ";
        			$result = mysql_query($sql_statement);
        			if(!$result){
 	
@@ -34,14 +34,20 @@
 					if($numresults == 0){
 						 echo "<script> alert(\"Invalid Username OR Password!!!\");window.location.href='index.php'</script>"; 
 						}else{
+
 							 echo "<h1> Welcome " .ucfirst($user)."</h1>";
+               $row = mysql_fetch_array($result);
+
+               $branch = $row['Branch_name'];
+               echo "<h2> Admin Branch : ".ucfirst($branch);
+                require("selectFromEmployee.php");
 						}
 					}
        	?>
        
  
       
-        <?php require("selectFromEmployee.php");?>
+        
 
       
 </body>
