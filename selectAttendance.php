@@ -1,8 +1,10 @@
 
 <?php 
-
+if ($user == "admin"){
+	$sql_statement  = "SELECT * FROM employee AS e INNER JOIN attendance AS a ON a.Emp_id = e.Emp_id";
+}else{
 $sql_statement  = "SELECT * FROM employee AS e INNER JOIN attendance AS a ON a.Emp_id = e.Emp_id WHERE e.Branch_name IN (SELECT Branch_name From admin WHERE username = '".$user."') ";
-
+}
 
 $result = mysql_query($sql_statement);
 
