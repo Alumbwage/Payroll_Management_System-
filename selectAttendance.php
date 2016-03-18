@@ -1,7 +1,7 @@
 
 <?php 
 
-$sql_statement  = "SELECT * FROM employee AS e INNER JOIN attendance AS a ON a.Emp_id = e.Emp_id; ";
+$sql_statement  = "SELECT * FROM employee AS e INNER JOIN attendance AS a ON a.Emp_id = e.Emp_id WHERE e.Branch_name IN (SELECT Branch_name From admin WHERE username = '".$user."') ";
 
 
 $result = mysql_query($sql_statement);
@@ -34,6 +34,7 @@ if(!$result){
 		}
 
 		$row = mysql_fetch_array($result);
+
        
 		$emp_id = $row['Emp_id'];
 		$emp_name = $row['Emp_name'];

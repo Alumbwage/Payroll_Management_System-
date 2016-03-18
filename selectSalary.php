@@ -1,7 +1,7 @@
 
 <?php 
 
-$sql_statement  = "SELECT * FROM employee AS e INNER JOIN salary AS s ON e.Emp_id = s.Emp_id ";
+$sql_statement  = "SELECT * FROM employee AS e INNER JOIN salary AS s ON e.Emp_id = s.Emp_id WHERE e.Branch_name IN (SELECT Branch_name From admin WHERE username = '".$user."') ";
 
 
 $result = mysql_query($sql_statement);
