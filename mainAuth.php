@@ -29,22 +29,22 @@
         
 
       <?php $sql_statement  = " SELECT username ,Branch_name FROM admin WHERE username = '".$user."' AND password = '".$pass."' ";
-                        $result = mysql_query($sql_statement);
+                        $result = mysqli_query($db,$sql_statement);
                         if(!$result){
               
-                      $outputDisplay .= "<br><font color=red>MYSQL No: ".mysql_errno();
-                      $outputDisplay .= "<br>MYSQL Error: ".mysql_error();
+                      $outputDisplay .= "<br><font color=red>mysqli No: ".mysqli_errno($db);
+                      $outputDisplay .= "<br>mysqli Error: ".mysqli_error();
                       $outputDisplay .= "<br>SQL Statement: ".$sql_statement;
-                      $outputDisplay .= "<br>MySQL Affected Rows: ".mysql_affected_rows()."</font><br>";
+                      $outputDisplay .= "<br>mysqli Affected Rows: ".mysqli_affected_rows()."</font><br>";
                     }else{
-                      $numresults = mysql_num_rows($result);
+                      $numresults = mysqli_num_rows($result);
 
                       if($numresults == 0){
                          echo "<script> alert(\"Invalid Username OR Password!!!\");window.location.href='index.php'</script>"; 
                         }else{
 
                            echo "<h1> Welcome " .ucfirst($user)."</h1>";
-                           $row = mysql_fetch_array($result);
+                           $row = mysqli_fetch_array($result);
 
                            $branch = $row['Branch_name'];
                            echo "<h2> Admin Branch : ".ucfirst($branch);
@@ -61,22 +61,22 @@
         
 
       <?php $sql_statement  = " SELECT username ,Branch_name FROM admin WHERE username = '".$user."' AND password = '".$pass."' ";
-                        $result = mysql_query($sql_statement);
+                        $result = mysqli_query($db,$sql_statement);
                         if(!$result){
               
-                      $outputDisplay .= "<br><font color=red>MYSQL No: ".mysql_errno();
-                      $outputDisplay .= "<br>MYSQL Error: ".mysql_error();
+                      $outputDisplay .= "<br><font color=red>mysqli No: ".mysqli_errno($db);
+                      $outputDisplay .= "<br>mysqli Error: ".mysqli_error();
                       $outputDisplay .= "<br>SQL Statement: ".$sql_statement;
-                      $outputDisplay .= "<br>MySQL Affected Rows: ".mysql_affected_rows()."</font><br>";
+                      $outputDisplay .= "<br>mysqli Affected Rows: ".mysqli_affected_rows()."</font><br>";
                     }else{
-                      $numresults = mysql_num_rows($result);
+                      $numresults = mysqli_num_rows($result);
 
                       if($numresults == 0){
                          echo "<script> alert(\"Invalid Username OR Password!!!\");window.location.href='index.php'</script>"; 
                         }else{
 
                            echo "<h1> Welcome " .ucfirst($user)."</h1>";
-                           $row = mysql_fetch_array($result);
+                           $row = mysqli_fetch_array($result);
 
                            $branch = $row['Branch_name'];
                            echo "<h2> Admin Branch : ".ucfirst($branch);
@@ -94,22 +94,22 @@
        
 
       <?php $sql_statement  = " SELECT username ,Branch_name FROM admin WHERE username = '".$user."' AND password = '".$pass."' ";
-                        $result = mysql_query($sql_statement);
+                        $result = mysqli_query($db,$sql_statement);
                         if(!$result){
               
-                      $outputDisplay .= "<br><font color=red>MYSQL No: ".mysql_errno();
-                      $outputDisplay .= "<br>MYSQL Error: ".mysql_error();
+                      $outputDisplay .= "<br><font color=red>mysqli No: ".mysqli_errno($db);
+                      $outputDisplay .= "<br>mysqli Error: ".mysqli_error();
                       $outputDisplay .= "<br>SQL Statement: ".$sql_statement;
-                      $outputDisplay .= "<br>MySQL Affected Rows: ".mysql_affected_rows()."</font><br>";
+                      $outputDisplay .= "<br>mysqli Affected Rows: ".mysqli_affected_rows()."</font><br>";
                     }else{
-                      $numresults = mysql_num_rows($result);
+                      $numresults = mysqli_num_rows($result);
 
                       if($numresults == 0){
                          echo "<script> alert(\"Invalid Username OR Password!!!\");window.location.href='index.php'</script>"; 
                         }else{
 
                            echo "<h1> Welcome " .ucfirst($user)."</h1>";
-                           $row = mysql_fetch_array($result);
+                           $row = mysqli_fetch_array($result);
 
                            $branch = $row['Branch_name'];
                            echo "<h2> Admin Branch : ".ucfirst($branch);

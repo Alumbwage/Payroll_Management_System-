@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS `salary` (
 --
 
 INSERT INTO `salary` (`Emp_id`, `Basic_sal`, `Allowance`, `DRA`, `Advance`) VALUES
+(1, 4000, 1000, 500, 2000),
 (2, 1000, 250, 100, 500),
 (3, 4000, 1000, 500, 2000),
 (4, 3000, 750, 350, 1500),
